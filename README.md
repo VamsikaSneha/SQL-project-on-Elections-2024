@@ -374,3 +374,10 @@ JOIN
 WHERE 
     s.State = 'Andhra Pradesh';
 ```
+## Findings and Conclusions
+
+𝑷𝙖𝒓𝙩𝒚 𝑷𝙚𝒓𝙛𝒐𝙧𝒎𝙖𝒏𝙘𝒆: The analysis highlights the performance of different alliances and parties across various constituencies.
+
+𝙑𝒐𝙩𝒆 𝑴𝙖𝒓𝙜𝒊𝙣𝒔: Constituencies with the smallest vote margins were identified, providing insights into the most competitive areas.
+
+𝑺𝙩𝒂𝙩𝒆-𝒘𝙞𝒔𝙚 𝘼𝒏𝙖𝒍𝙮𝒔𝙞𝒔: A breakdown of party and alliance performance across all states was provided to show regional political trends.
