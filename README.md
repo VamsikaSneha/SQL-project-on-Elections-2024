@@ -13,6 +13,8 @@ This project involves an in-depth analysis of the 2024 India General Elections r
 
 ##  Business Problems and Solutions
 ### Total Seats
-	``` SELECT 
+	 ```sql  
+  SELECT 
 	DISTINCT COUNT (Parliament_Constituency) AS Total_Seats
-	FROM constituencywise_results ```
+	FROM constituencywise_results 
+ ```
