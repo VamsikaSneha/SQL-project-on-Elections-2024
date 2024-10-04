@@ -12,3 +12,7 @@ This project involves an in-depth analysis of the 2024 India General Elections r
 * Analyze party-wise and state-wise election outcomes.
 
 # Business Problems and Solutions
+###Total Seats
+	'''SELECT 
+	DISTINCT COUNT (Parliament_Constituency) AS Total_Seats
+	FROM constituencywise_results'''
