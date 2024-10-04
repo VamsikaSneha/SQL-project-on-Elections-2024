@@ -206,7 +206,7 @@ WHERE party IN (
 UPDATE partywise_results
 SET party_alliance = 'OTHER'
 WHERE party_alliance IS NULL;
-```
+``` ``` ```` ```` ``` 
 ### Which party alliance (NDA, I.N.D.I.A, or OTHER) won the most seats across all states?
 ```sql
 SELECT 
