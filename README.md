@@ -156,9 +156,8 @@ ORDER BY Seats_Won DESC;
 ````sql
 ALTER TABLE partywise_results
 ADD party_alliance VARCHAR(50);
-``` 
-### I.N.D.I.A Allianz
-``` sql
+
+
 UPDATE partywise_results
 SET party_alliance = 'I.N.D.I.A'
 WHERE party IN (
@@ -183,4 +182,45 @@ WHERE party IN (
     'Shiv Sena (Uddhav Balasaheb Thackrey) - SHSUBT',
     'Viduthalai Chiruthaigal Katchi - VCK'
 );
+
+UPDATE partywise_results
+SET party_alliance = 'NDA'
+WHERE party IN (
+    'Bharatiya Janata Party - BJP',
+    'Telugu Desam - TDP',
+    'Janata Dal  (United) - JD(U)',
+    'Shiv Sena - SHS',
+    'AJSU Party - AJSUP',
+    'Apna Dal (Soneylal) - ADAL',
+    'Asom Gana Parishad - AGP',
+    'Hindustani Awam Morcha (Secular) - HAMS',
+    'Janasena Party - JnP',
+    'Janata Dal  (Secular) - JD(S)',
+    'Lok Janshakti Party(Ram Vilas) - LJPRV',
+    'Nationalist Congress Party - NCP',
+    'Rashtriya Lok Dal - RLD',
+    'Sikkim Krantikari Morcha - SKM'
+);
+
+
+UPDATE partywise_results
+SET party_alliance = 'OTHER'
+WHERE party_alliance IS NULL;
+```
+### Which party alliance (NDA, I.N.D.I.A, or OTHER) won the most seats across all states?
+```sql
+SELECT 
+    p.party_alliance,
+    COUNT(cr.Constituency_ID) AS Seats_Won
+FROM 
+    constituencywise_results cr
+JOIN 
+    partywise_results p ON cr.Party_ID = p.Party_ID
+WHERE 
+    p.party_alliance IN ('NDA', 'I.N.D.I.A', 'OTHER')
+GROUP BY 
+    p.party_alliance
+ORDER BY 
+    Seats_Won DESC;
+
 ```
