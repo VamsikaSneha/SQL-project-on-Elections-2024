@@ -1,5 +1,7 @@
 # India General Elections 2024 Data Analysis Using SQL
 
+![](https://c8.alamy.com/comp/2WD33HM/election-2024-banner-design-general-election-2WD33HM.jpg)
+
 ## Overview 
 
 This project involves an in-depth analysis of the 2024 India General Elections results using SQL. The aim is to extract insights related to the election results across different constituencies and states. The project addresses key business questions such as the distribution of seats won by political alliances, vote margins, and the performance of political parties.
