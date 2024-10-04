@@ -150,7 +150,7 @@ WHERE
                 'Shiv Sena (Uddhav Balasaheb Thackrey) - SHSUBT',
                 'Viduthalai Chiruthaigal Katchi - VCK'
     )
-ORDER BY Seats_Won DESC
+ORDER BY Seats_Won DESC;
 ```
 ### Add new column field in table partywise_results to get the Party Allianz as NDA, I.N.D.I.A and OTHER
 ````sql
