@@ -152,12 +152,14 @@ WHERE
     )
 ORDER BY Seats_Won DESC;
 ```
+
 ### Add new column field in table partywise_results to get the Party Allianz as NDA, I.N.D.I.A and OTHER
-````sql
+```sql
 ALTER TABLE partywise_results
 ADD party_alliance VARCHAR(50);
-
-
+```
+## I.N.D.I.A Allianz
+```sql
 UPDATE partywise_results
 SET party_alliance = 'I.N.D.I.A'
 WHERE party IN (
@@ -182,7 +184,9 @@ WHERE party IN (
     'Shiv Sena (Uddhav Balasaheb Thackrey) - SHSUBT',
     'Viduthalai Chiruthaigal Katchi - VCK'
 );
-
+```
+## NDA Allianz
+```sql
 UPDATE partywise_results
 SET party_alliance = 'NDA'
 WHERE party IN (
@@ -201,12 +205,13 @@ WHERE party IN (
     'Rashtriya Lok Dal - RLD',
     'Sikkim Krantikari Morcha - SKM'
 );
-
-
+```
+## OTHER
+```sql
 UPDATE partywise_results
 SET party_alliance = 'OTHER'
 WHERE party_alliance IS NULL;
-``` ``` ```` ```` ``` 
+``` 
 ### Which party alliance (NDA, I.N.D.I.A, or OTHER) won the most seats across all states?
 ```sql
 SELECT 
@@ -222,5 +227,13 @@ GROUP BY
     p.party_alliance
 ORDER BY 
     Seats_Won DESC;
-
+``` 
+### Winning candidate's name, their party name, total votes, and the margin of victory for a specific state and constituency?
+```sql
+SELECT cr.Winning_Candidate, p.Party, p.party_alliance, cr.Total_Votes, cr.Margin, cr.Constituency_Name, s.State
+FROM constituencywise_results cr
+JOIN partywise_results p ON cr.Party_ID = p.Party_ID
+JOIN statewise_results sr ON cr.Parliament_Constituency = sr.Parliament_Constituency
+JOIN states s ON sr.State_ID = s.State_ID
+WHERE s.State = 'Andhra Pradesh' AND cr.Constituency_Name = 'AMALAPURAM(SC)';
 ```
