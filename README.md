@@ -87,3 +87,98 @@ WHERE
     )
 ORDER BY Seats_Won DESC;
 ```
+### Total Seats Won by I.N.D.I.A. Allianz
+```sql
+SELECT 
+    SUM(CASE 
+            WHEN party IN (
+                'Indian National Congress - INC',
+                'Aam Aadmi Party - AAAP',
+                'All India Trinamool Congress - AITC',
+                'Bharat Adivasi Party - BHRTADVSIP',
+                'Communist Party of India  (Marxist) - CPI(M)',
+                'Communist Party of India  (Marxist-Leninist)  (Liberation) - CPI(ML)(L)',
+                'Communist Party of India - CPI',
+                'Dravida Munnetra Kazhagam - DMK',
+                'Indian Union Muslim League - IUML',
+                'Nat`Jammu & Kashmir National Conference - JKN',
+                'Jharkhand Mukti Morcha - JMM',
+                'Jammu & Kashmir National Conference - JKN',
+                'Kerala Congress - KEC',
+                'Marumalarchi Dravida Munnetra Kazhagam - MDMK',
+                'Nationalist Congress Party Sharadchandra Pawar - NCPSP',
+                'Rashtriya Janata Dal - RJD',
+                'Rashtriya Loktantrik Party - RLTP',
+                'Revolutionary Socialist Party - RSP',
+                'Samajwadi Party - SP',
+                'Shiv Sena (Uddhav Balasaheb Thackrey) - SHSUBT',
+                'Viduthalai Chiruthaigal Katchi - VCK'
+            ) THEN [Won]
+            ELSE 0 
+        END) AS INDIA_Total_Seats_Won
+FROM 
+    partywise_results
+```
+### Seats Won by I.N.D.I.A. Allianz Parties
+```
+SELECT 
+    party as Party_Name,
+    won as Seats_Won
+FROM 
+    partywise_results
+WHERE 
+    party IN (
+        'Indian National Congress - INC',
+                'Aam Aadmi Party - AAAP',
+                'All India Trinamool Congress - AITC',
+				'Bharat Adivasi Party - BHRTADVSIP',
+                'Communist Party of India  (Marxist) - CPI(M)',
+                'Communist Party of India  (Marxist-Leninist)  (Liberation) - CPI(ML)(L)',
+                'Communist Party of India - CPI',
+                'Dravida Munnetra Kazhagam - DMK',
+                'Indian Union Muslim League - IUML',
+                'Nat`Jammu & Kashmir National Conference - JKN',
+                'Jharkhand Mukti Morcha - JMM',
+                'Jammu & Kashmir National Conference - JKN',
+                'Kerala Congress - KEC',
+                'Marumalarchi Dravida Munnetra Kazhagam - MDMK',
+                'Nationalist Congress Party Sharadchandra Pawar - NCPSP',
+                'Rashtriya Janata Dal - RJD',
+                'Rashtriya Loktantrik Party - RLTP',
+                'Revolutionary Socialist Party - RSP',
+                'Samajwadi Party - SP',
+                'Shiv Sena (Uddhav Balasaheb Thackrey) - SHSUBT',
+                'Viduthalai Chiruthaigal Katchi - VCK'
+    )
+ORDER BY Seats_Won DESC
+```
+### Add new column field in table partywise_results to get the Party Allianz as NDA, I.N.D.I.A and OTHER
+````sql
+ALTER TABLE partywise_results
+ADD party_alliance VARCHAR(50);
+```
+### UPDATE partywise_results
+SET party_alliance = 'I.N.D.I.A'
+WHERE party IN (
+    'Indian National Congress - INC',
+    'Aam Aadmi Party - AAAP',
+    'All India Trinamool Congress - AITC',
+    'Bharat Adivasi Party - BHRTADVSIP',
+    'Communist Party of India  (Marxist) - CPI(M)',
+    'Communist Party of India  (Marxist-Leninist)  (Liberation) - CPI(ML)(L)',
+    'Communist Party of India - CPI',
+    'Dravida Munnetra Kazhagam - DMK',	
+    'Indian Union Muslim League - IUML',
+    'Jammu & Kashmir National Conference - JKN',
+    'Jharkhand Mukti Morcha - JMM',
+    'Kerala Congress - KEC',
+    'Marumalarchi Dravida Munnetra Kazhagam - MDMK',
+    'Nationalist Congress Party Sharadchandra Pawar - NCPSP',
+    'Rashtriya Janata Dal - RJD',
+    'Rashtriya Loktantrik Party - RLTP',
+    'Revolutionary Socialist Party - RSP',
+    'Samajwadi Party - SP',
+    'Shiv Sena (Uddhav Balasaheb Thackrey) - SHSUBT',
+    'Viduthalai Chiruthaigal Katchi - VCK'
+);
+```
