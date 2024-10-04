@@ -62,7 +62,7 @@ FROM
     partywise_results
 ```
 ### Seats Won by NDA Allianz Parties
-```
+```sql
 SELECT 
     party as Party_Name,
     won as Seats_Won
@@ -120,7 +120,7 @@ FROM
     partywise_results
 ```
 ### Seats Won by I.N.D.I.A. Allianz Parties
-```
+```sql
 SELECT 
     party as Party_Name,
     won as Seats_Won
@@ -157,7 +157,8 @@ ORDER BY Seats_Won DESC;
 ALTER TABLE partywise_results
 ADD party_alliance VARCHAR(50);
 ```
-### UPDATE partywise_results
+```sql
+UPDATE partywise_results
 SET party_alliance = 'I.N.D.I.A'
 WHERE party IN (
     'Indian National Congress - INC',
