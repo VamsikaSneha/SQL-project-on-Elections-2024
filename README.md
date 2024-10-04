@@ -20,3 +20,19 @@ SELECT
 FROM netflix
 GROUP BY 1;
 ```
+### What is the total number of seats available for elections in each state
+```sql
+SELECT 
+    s.State AS State_Name,
+    COUNT(cr.Constituency_ID) AS Total_Seats_Available
+FROM 
+    constituencywise_results cr
+INNER JOIN 
+    statewise_results sr ON cr.Parliament_Constituency = sr.Parliament_Constituency
+INNER JOIN 
+    states s ON sr.State_ID = s.State_ID
+GROUP BY 
+    s.State
+ORDER BY 
+    s.State;
+```
