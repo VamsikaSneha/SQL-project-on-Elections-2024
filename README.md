@@ -1,4 +1,4 @@
-# India General Elections 2024 Data Analysis Using SQL
+# Iɴᴅɪᴀ Gᴇɴᴇʀᴀʟ Eʟᴇᴄᴛɪᴏɴs 2024 Dᴀᴛᴀ Aɴᴀʟʏsɪs Usɪɴɢ SQL
 
 ![](https://c8.alamy.com/comp/2WD33HM/election-2024-banner-design-general-election-2WD33HM.jpg)
 
