@@ -381,3 +381,5 @@ WHERE
 𝙑𝒐𝙩𝒆 𝑴𝙖𝒓𝙜𝒊𝙣𝒔: Constituencies with the smallest vote margins were identified, providing insights into the most competitive areas.
 
 𝑺𝙩𝒂𝙩𝒆-𝒘𝙞𝒔𝙚 𝘼𝒏𝙖𝒍𝙮𝒔𝙞𝒔: A breakdown of party and alliance performance across all states was provided to show regional political trends.
+
+𝙂𝙚𝙤𝙜𝙧𝙖𝙥𝙝𝙞𝙘 𝙏𝙧𝙚𝙣𝙙𝙨: Insights into regional voting patterns and the distribution of seats across India.
