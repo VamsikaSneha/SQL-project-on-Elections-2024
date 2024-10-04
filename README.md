@@ -13,7 +13,7 @@ This project involves an in-depth analysis of the 2024 India General Elections r
 
 ##  Business Problems and Solutions
 ### Total Seats
-	```sql
+```sql
 SELECT 
     type,
     COUNT(*)
