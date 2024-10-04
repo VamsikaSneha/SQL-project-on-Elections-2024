@@ -157,6 +157,7 @@ ORDER BY Seats_Won DESC;
 ALTER TABLE partywise_results
 ADD party_alliance VARCHAR(50);
 ```
+
 ```sql
 UPDATE partywise_results
 SET party_alliance = 'I.N.D.I.A'
